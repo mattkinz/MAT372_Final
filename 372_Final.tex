@@ -18,7 +18,80 @@
 
 \end{center}
 
-\vspace{.5in} {\bf [4]} Suppose that $w\in C^2(\Omega)\cap C(\overline{\Omega})$ is a solution to the given partial differential equation. Since $\Omega\subseteq\mathbb{R}^3$ is bounded,  $\overline{\Omega}$ is both closed and bounded in $\mathbb{R}^3$, hence $\overline{\Omega}$ is compact. $w$ is continuous on a compact set, thus $w$ attains a maximum and a minimun on $\overline{\Omega}$.
+\vspace{.5in} 
+
+\noindent {\bf [1]} For any set $E\subseteq \mathbb{R}^2$ define the projection operator $P:E\rightarrow\mathbb{R}$ by $P(x,y)=x$.
+
+\vspace{.2in}
+
+\noindent (a) Suppose that $E$ is bounded. Then for all $u\in E$, there exists $M\geq 0$ such that $\|u\|\leq M$. Let $u=(u_1,u_2)\in E$. Then,
+\[
+|P(u)|=|P(u_1,u_2)|=|u_1|\leq \|u\|\leq M.
+\]
+Thus, $P(E)$ is bounded.\hfill $\Box$
+
+\vspace{.2in}
+
+\noindent (b) Let $E=\left\{(x,\frac{1}{x}):x>0\right\}\subseteq\mathbb{R}^2$, which is closed because any $u\in\mathbb{R}^2\cap E^c$ can be enclosed in an open ball $B(u)\subseteq E^c$, i.e. $E^c$ is open. But, $P(E)=\left\{x:x>0\right\}$ is open.\hfill $\Box$
+
+\vspace{.2in}
+
+\noindent (c) Suppose the $E$ is compact. Let $\bigcup\limits_{\alpha =1}^\infty G_\alpha$ be a union of open sets such that $P(E)\subseteq\bigcup\limits_{\alpha =1}^\infty G_\alpha$. It follows that
+\[
+E\subseteq P(E)\times\left(\bigcup\limits_{k\in\mathbb{N}}(-k,k)\right)\subseteq \left(\bigcup\limits_{\alpha =1}^\infty G_\alpha\right)\times \left(\bigcup\limits_{k\in\mathbb{N}}(-k,k)\right)
+\] 
+Since $E$ is compact, there exists numbers N,M such that 
+\[
+E\subseteq \left(\bigcup\limits_{\alpha =1}^N G_\alpha\right)\times \left(\bigcup\limits_{k=1}^M(-k,k)\right)
+\]
+
+\noindent Thus, $P(E)\subseteq \bigcup\limits_{\alpha =1}^N G_\alpha$. So $P(E)$ is compact.\hfill $\Box$
+
+\vspace{.2in}
+
+\noindent More succinctly (but less fun) you could use continuity of $P$ and preservation of compact sets by continuous functions.\hfill $\Box$
+
+\vspace{.5in}
+
+\noindent {\bf [2]} Let $B:\mathbb{R}^p\times\mathbb{R}^p\rightarrow\mathbb{R}^q$ be a bounded bilinear function. Set $g(x)=B(x,x)$. For $x,u\in\mathbb{R}^p$, prove:
+\begin{align*}
+\text{(i)}&\;Dg(x)(u)=B(x,u)+B(u,x)=Dg(u)(x)\\\text{(ii)}&\;g(x+u)=g(x)+g(u)+Dg(x)(u).
+\end{align*}
+
+\vspace{.2in}
+
+\noindent Since $B$ is a bounded bilinear function, there exists $M>0$ such that $\|B(x,y)\|\leq M\|x\|\|y\|$ for all $x,y\in\mathbb{R}^p$.
+\vspace{.2in}
+
+\noindent Let $x,u\in\mathbb{R}^p$.
+\vspace{.2in}
+
+\noindent \text{(i)} To check that $F_x(u)=B(x,u)+B(u,x)$ is linear in $u$, let $u=cv+z$ for scaler $c$ and $v,z\in\mathbb{R}^p$.
+\begin{eqnarray*}
+F_x(cv+z)&=&B(x,cv+z)+B(cv+z,x)\\&=&cB(x,v)+B(x,z)+cB(v,x)+B(z,x)\\&=&c\left[B(x,v)+B(v,x)\right]+B(x,z)+B(z,x)\\&=&cF_x(v)+F_x(z).
+\end{eqnarray*}
+\noindent Thus $F_x$ is linear in $u$.
+
+\vspace{.2in}
+
+\noindent Let $\epsilon>0$. Choose $t\in\mathbb{R}$ such that $\|tu\|<\frac{\epsilon}{M}$. Note that
+\begin{align*}
+g(x+tu)&=B(x+tu,x+tu)\\&=B(x,x+tu)+tB(u,x+tu)\\&=B(x,x)+tB(x,u)+tB(u,x)+t^2B(u,u)&&(1)
+\end{align*}
+\noindent It follows that
+\begin{align*}
+\|g(x+tu)-g(x)-F_x(tu)\|&=\|g(x+tu)-g(x)-\left[B(x,tu)+B(tu,x)\right]\|\\&=\|g(x+tu)-g(x)-\left[tB(x,u)+tB(u,x)\right]\|\\&=\|B(x,x)+t^2B(u,u)-g(x)\|\\&=\|t^2B(u,u)\|\\&\leq t^2M\|u\|^2\\&=M\|tu\|\|tu\|\\&<\epsilon\|tu\|.
+\end{align*}
+
+\noindent Thus, $Dg(x)(u)=F_x(u)=B(x,u)+B(u,x)$. Using symmetry, this same argument shows that $Dg(u)(x)=B(x,u)+B(u,x)$ as well. \hfill $\Box$
+
+\vspace{.2in}
+
+\noindent 
+
+\vspace{.5in}
+
+\noindent {\bf [4]} Suppose that $w\in C^2(\Omega)\cap C(\overline{\Omega})$ is a solution to the given partial differential equation. Since $\Omega\subseteq\mathbb{R}^3$ is bounded,  $\overline{\Omega}$ is both closed and bounded in $\mathbb{R}^3$, hence $\overline{\Omega}$ is compact. $w$ is continuous on a compact set, thus $w$ attains a maximum and a minimun on $\overline{\Omega}$.
 
 \begin{itemize}
 \item Case 1: Suppose that both the max and min of $w$ on $\overline{\Omega}$ occur on $\partial \Omega$. Then 
