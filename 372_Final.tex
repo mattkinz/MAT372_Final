@@ -145,5 +145,79 @@ Thus,
 
 \end{itemize}
 
+\vspace{.5in}
+
+\noindent {\bf [5]} Let $\Omega=[0,1]\times[0,1]$. Suppose $f:\Omega\rightarrow\mathbb{R}$ is given by $f(x,y)=xy$.
+
+\vspace{.2in}
+
+\noindent (a) Use the definition of the Darboux integral to show that $f$ is Darboux integrable, and find the integral.
+
+\vspace{.2in}
+
+\noindent Let $\epsilon>0$ and choose $N\in\mathbb{N}$ such that $\frac{2}{N}<\epsilon$. Let $P_\epsilon$ be a partition such that 
+\[
+P_1=\left\{x_0,x_1,...,x_N\right\}=\left\{0,\frac{1}{N},\frac{2}{N},...,\frac{N}{N}=1\right\}
+\]
+\[
+P_2=\left\{y_0,y_1,...,y_N\right\}=\left\{0,\frac{1}{N},\frac{2}{N},...,\frac{N}{N}=1\right\}.
+\]
+\noindent Note that on each square $R_{ij}=[x_{i-1},x_i]\times[y_{j-1},y_j]$, $1\leq i\leq N$, $1\leq j\leq N$:
+\vspace{.1in}
+
+\[
+\sup\limits_{R_{ij}}f(x,y)=x_iy_j
+\]
+\[
+\inf\limits_{R_{ij}}f(x,y)=x_{i-1}y_{j-1}.
+\]
+
+\vspace{.2in}
+
+\noindent It follows that
+\begin{align*}
+U(f,P_\epsilon)-L(f,P\epsilon)&=\sum\limits_{i,j=1}^N\left[\sup\limits_{R_{ij}}f(x,y)-\inf\limits_{R_{ij}}f(x,y)\right]\left(x_i-x_{i-1}\right)\left(y_j-y_{j-1}\right)\\&=\sum\limits_{i,j=1}^N\left[x_iy_j-x_{i-1}y_{j-1}\right]\left(x_i-x_{i-1}\right)\left(y_j-y_{j-1}\right)\\&=\sum\limits_{i,j=1}^N\left[x_iy_j-\left(x_iy_{j-1}\right)+\left(x_iy_{j-1}\right)-x_{i-1}y_{j-1}\right]\left(x_i-x_{i-1}\right)\left(y_j-y_{j-1}\right)\\&=\sum\limits_{i,j=1}^N\Big[x_i\left(y_j-y_{j-1}\right)+y_{j-1}\left(x_i-x_{i-1}\right)\Big]\left(x_i-x_{i-1}\right)\left(y_j-y_{j-1}\right)\\&\leq \sum\limits_{i,j=1}^N\Big[(1)\left(y_j-y_{j-1}\right)+(1)\left(x_i-x_{i-1}\right)\Big]\left(x_i-x_{i-1}\right)\left(y_j-y_{j-1}\right)\\&=\sum\limits_{i,j=1}^N\Big[\frac{1}{N}+\frac{1}{N}\Big]\frac{1}{N}\frac{1}{N}\\&=\frac{2}{N^3}\sum\limits_{i=1}^N\sum\limits_{j=1}^N1\\&=\frac{2}{N^3}N^2\\&=\frac{2}{N}\\&<\epsilon.
+\end{align*}
+\noindent Thus $f$ is darboux integrable on $\Omega$.\hfill $\Box$
+
+\vspace{.2in}
+ 
+\noindent Let $P_n$, $n\in\mathbb{N}$, be a partition of $\Omega$ consisting of squares of side length $\frac{1}{n}$. Then
+\begin{align*}
+U(f,P_n)&=\sum\limits_{i,j=1}^n\left[\sup\limits_{R_{ij}}f(x,y)\right]\left(x_i-x_{i-1}\right)\left(y_j-y_{j-1}\right)\\&=\sum\limits_{i,j=1}^n\left[\frac{i}{n}\frac{j}{n}\right]\frac{1}{n}\frac{1}{n}\\&=\frac{1}{n^4}\left[\sum\limits_{i=1}^ni\left[\sum\limits_{j=1}^nj\right]\right]\\&=\\&=\frac{1}{n^4}\left[\frac{n(n+1)}{2}\right]\sum\limits_{i=1}^ni\\&=\left[\frac{(n+1)}{2n^3}\right]\left[\frac{n(n+1)}{2}\right]\\&=\frac{(n+1)^2}{4n^2}\\&=\frac{n^2+2n+1}{4n^2}\\&>\frac{1}{4}&&\text{for all n.}
+\end{align*}
+\noindent Thus, $\inf\limits_PU(f,P)\geq \frac{1}{4}$.
+
+\vspace{.2in}
+
+\noindent Similarly,
+
+\begin{align*}
+L(f,P_n)&=\sum\limits_{i,j=1}^n\left[\inf\limits_{R_{ij}}f(x,y)\right]\left(x_i-x_{i-1}\right)\left(y_j-y_{j-1}\right)\\&=\sum\limits_{i,j=1}^n\left[\frac{i-1}{n}\frac{j-1}{n}\right]\frac{1}{n}\frac{1}{n}\\&=\frac{1}{n^4}\left[\sum\limits_{i=1}^n(i-1)\left[\sum\limits_{j=1}^n(j-1)\right]\right]\\&=\\&=\frac{1}{n^4}\left[\frac{n(n+1)}{2}-n\right]\sum\limits_{i=1}^n(i-1)\\&=\frac{1}{n^3}\left[\frac{(n+1)}{2}-1\right]\left[\frac{n(n+1)}{2}-n\right]\\&=\frac{1}{n^2}\frac{n-1}{2}\frac{n-1}{2}\\&=\frac{n^2-2n+1}{4n^2}\\&<\frac{1}{4}&&\text{for all n.}
+\end{align*}
+\noindent Thus, $\sup\limits_PL(f,P)\leq\frac{1}{4}$.
+\vspace{.2in}
+
+\noindent But, since $f$ is darboux integrable on $\Omega$, it must be that
+\[
+\sup\limits_PL(f,P)=\inf\limits_PU(f,P)=\frac{1}{4}=\int\limits_\Omega f.
+\]
+\hfill	$\Box$
+
+\vspace{.2in}
+
+\noindent (b) Repeat (a) using theorems.
+
+\vspace{.2in}
+
+\noindent Since the projection functions $p_x(x,y)=x$ and $p_y(x,y)=y$ are both continuous, by the algebra of continuous functions, their product $f(x,y)=xy$ is continuous. Thus, $f(x,y)$ is darboux integrable on $\Omega$. Let $x^{'}\in [0,1]$. Clearly $\int\limits_0^1f(x^{'},y)\;dy=\int\limits_0^1x^{'}y\;dy$ exists. Hence, by the Jones iterated integrals theorem, 
+\[
+g(x)=\int\limits_0^1f(x,y)\;dy
+\]
+\noindent is integrable on $[0,1]$, and $\int\limits_0^1g(x)\;dx=\iint\limits_\Omega f(x,y)\;dA$. Therefore,
+\begin{align*}
+\iint\limits_\Omega f(x,y)\;dA&=\int\limits_0^1g(x)\;dx\\&=\int\limits_0^1\left(\int\limits_0^1f(x,y)\;dy\right)\;dx\\&=\int\limits_0^1\left(\int\limits_0^1xy\;dy\right)\;dx\\&=\int\limits_0^1\frac{x}{2}\;dx\\&=\frac{1}{4}.
+\end{align*}
+\hfill $\Box$
 
 \end{document}
