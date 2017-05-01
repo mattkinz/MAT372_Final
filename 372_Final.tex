@@ -93,6 +93,29 @@ g(x+tu)&=B(x+tu,x+tu)\\&=B(x,x+tu)+tB(u,x+tu)\\&=B(x,x)+tB(x,u)+tB(u,x)+t^2B(u,u
 
 \vspace{.5in}
 
+\noindent {\bf [3]} Find sufficient conditions on $f$ and $g$ so that the equations
+\[
+f(xy)+g(xz)=0,\hspace{.2in}g(xy)+f(yz)=0 
+\]
+\noindent have a solution near $x=y=z=1$. Assume that $f(1)=g(1)=0$.
+
+\vspace{.3in}
+
+\noindent [proof]
+
+Suppose that for any $0<\epsilon<1$ we have $\Omega=\left(1-\epsilon,1+\epsilon\right)$ and $f,g\in C^1(\Omega)$ with $f^{'}(1)\neq 0$ and $g^{'}(1)\neq 0$. 
+
+\vspace{.2in}
+
+It follows that the mappings $x\mapsto f^{'}(1)x$ and $x\mapsto g^{'}(1)x$ are both bijections from $\mathbb{R}$ to $\mathbb{R}$. By the inversion theorem there exists and open nbhd $U_f\subseteq \Omega$ and $U_g\subseteq \Omega$ such that $V_f=f(U_f)$ and $V_g=g(U_g)$
+are both open nbhds of $f(1)=g(1)=0$, and both $f:U_f\rightarrow V_f$ and $g:U_g\rightarrow V_g$ are bijections. Let $U=U_f\cap U_g$ and $V=V_f\cap V_g$. 
+
+\vspace{.2in}
+
+Let $r\in V$ such $-r\in V$ as well. This is possible. By the surjectivity of $f$ there exists $w\in U$ such that $f(w)=r$. By the bijectivity of $g$, $g(w)=q$ for some $q\in V$. 
+
+\vspace{.5in}
+
 \noindent {\bf [4]} Suppose that $w\in C^2(\Omega)\cap C(\overline{\Omega})$ is a solution to the given partial differential equation. Since $\Omega\subseteq\mathbb{R}^3$ is bounded,  $\overline{\Omega}$ is both closed and bounded in $\mathbb{R}^3$, hence $\overline{\Omega}$ is compact. $w$ is continuous on a compact set, thus $w$ attains a maximum and a minimun on $\overline{\Omega}$.
 
 \begin{itemize}
