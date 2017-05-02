@@ -51,7 +51,7 @@ E\subseteq \left(\bigcup\limits_{\alpha =1}^N G_\alpha\right)\times \left(\bigcu
 
 \noindent More succinctly (but less fun) you could use continuity of $P$ and preservation of compact sets by continuous functions.\hfill $\Box$
 
-\vspace{.5in}
+\newpage
 
 \noindent {\bf [2]} Let $B:\mathbb{R}^p\times\mathbb{R}^p\rightarrow\mathbb{R}^q$ be a bounded bilinear function. Set $g(x)=B(x,x)$. For $x,u\in\mathbb{R}^p$, prove:
 \begin{align*}
@@ -60,7 +60,9 @@ E\subseteq \left(\bigcup\limits_{\alpha =1}^N G_\alpha\right)\times \left(\bigcu
 
 \vspace{.2in}
 
-\noindent Since $B$ is a bounded bilinear function, there exists $M>0$ such that $\|B(x,y)\|\leq M\|x\|\|y\|$ for all $x,y\in\mathbb{R}^p$.
+\noindent [proof]
+
+ Since $B$ is a bounded bilinear function, there exists $M>0$ such that $\|B(x,y)\|\leq M\|x\|\|y\|$ for all $x,y\in\mathbb{R}^p$.
 \vspace{.2in}
 
 \noindent Let $x,u\in\mathbb{R}^p$.
@@ -72,7 +74,7 @@ F_x(cv+z)&=&B(x,cv+z)+B(cv+z,x)\\&=&cB(x,v)+B(x,z)+cB(v,x)+B(z,x)\\&=&c\left[B(x
 \end{eqnarray*}
 \noindent Thus $F_x$ is linear in $u$.
 
-\vspace{.2in}
+\vspace{.1in}
 
 \noindent Let $\epsilon>0$. Choose $t\in\mathbb{R}$ such that $\|tu\|<\frac{\epsilon}{M}$. Note that
 \begin{align*}
@@ -85,13 +87,13 @@ g(x+tu)&=B(x+tu,x+tu)\\&=B(x,x+tu)+tB(u,x+tu)\\&=B(x,x)+tB(x,u)+tB(u,x)+t^2B(u,u
 
 \noindent Thus, $Dg(x)(u)=F_x(u)=B(x,u)+B(u,x)$. Using symmetry, this same argument shows that $Dg(u)(x)=B(x,u)+B(u,x)$ as well. \hfill $\Box$
 
-\vspace{.2in}
+\vspace{.1in}
 
 \noindent \text{(ii)} \begin{align*}g(x+u)&=B(x+u,x+u)\\&=B(x,x+u)+B(u,x+u)\\&=B(x,x)+B(x,u)+B(u,x)+B(u,u)\\&=B(x,x)+B(u,u)+B(x,u)+B(u,x)\\&=g(x)+g(u)+Dg(x)(u).
 \end{align*}
 \hfill $\Box$
 
-\vspace{.5in}
+\newpage
 
 \noindent {\bf [3]} Find sufficient conditions on $f$ and $g$ so that the equations
 \[
@@ -103,20 +105,64 @@ f(xy)+g(xz)=0,\hspace{.2in}g(xy)+f(yz)=0
 
 \noindent [proof]
 
-Suppose that for any $0<\epsilon<1$ we have $\Omega=\left(1-\epsilon,1+\epsilon\right)$ and $f,g\in C^1(\Omega)$ with $f^{'}(1)\neq 0$ and $g^{'}(1)\neq 0$. 
+{\bf Suppose that for any $0<\epsilon<1$ we have $\Omega=\left(1-\epsilon,1+\epsilon\right)$ and $f,g\in C^1(\Omega)$ with $f^{'}(1)\neq 0$ and $g^{'}(1)\neq 0$.} 
 
-\vspace{.2in}
+\vspace{.1in}
 
 It follows that the mappings $x\mapsto f^{'}(1)x$ and $x\mapsto g^{'}(1)x$ are both bijections from $\mathbb{R}$ to $\mathbb{R}$. By the inversion theorem there exists and open nbhd $U_f\subseteq \Omega$ and $U_g\subseteq \Omega$ such that $V_f=f(U_f)$ and $V_g=g(U_g)$
-are both open nbhds of $f(1)=g(1)=0$, and both $f:U_f\rightarrow V_f$ and $g:U_g\rightarrow V_g$ are bijections. Let $U=U_f\cap U_g$ and $V=V_f\cap V_g$. 
+are both open nbhds of $f(1)=g(1)=0$, and both $f:U_f\rightarrow V_f$ and $g:U_g\rightarrow V_g$ are bijections. Let $U=U_f\cap U_g$ and $V=V_f\cap V_g$. Then further restrict $V$ (and the corresponding $U$) so that $V$ is an open nbhd with center $0$. Hence $z\in V \iff -z\in V$. 
 
-\vspace{.2in}
+\vspace{.1in}
 
-Let $r\in V$ such $-r\in V$ as well. This is possible. By the surjectivity of $f$ there exists $w\in U$ such that $f(w)=r$. By the bijectivity of $g$, $g(w)=q$ for some $q\in V$. 
+Choose $r\in V$. By the surjectivity of $f$ there exists $w\in U$ such that $f(w)=r$. By the bijectivity of $g$, $g(w)=q$ for some $q\in V$. Moreover, both $-r\in V$ and $-q\in V$. It follows from the bijectivity of $f$ and $g$ that there exists $s,t\in U$ such that $f(s)=-q$ and $g(t)=-r$. Note that by how we restricted $\Omega$, each of $w,s,$ and $t$ are positive numbers, and both
+\[
+f(w)+g(t)=0
+\]  
+\[
+g(w)+f(s)=0.
+\]
+\vspace{.1in}
 
-\vspace{.5in}
+Set
+\[
+xy=w,\hspace{.5in}xz=t,\hspace{.5in}\text{and}\hspace{.2in}yz=s.
+\]
+Since $w,s,t$ are positive, $x,y,z$ are also positive. We just need to solve these three equations to find values for $x,y,z$.
+\begin{align*}
+xy=w\rightarrow y=\frac{w}{x}. &\hspace{.4in}	xz=t\rightarrow z=\frac{t}{x}.	&&	s=yz=\frac{w}{x}\frac{t}{x}=\frac{wt}{x^2}\rightarrow x=\sqrt{\frac{wt}{s}}. 
+\end{align*}
+\noindent Thus,
+\begin{align*}
+y=\frac{w}{\sqrt{\frac{wt}{s}}}=\sqrt{\frac{ws}{t}}	&\hspace{.3in}\text{and}\hspace{.2in} z=\frac{t}{\sqrt{\frac{wt}{s}}}=\sqrt{\frac{ts}{w}}.
+\end{align*}
 
-\noindent {\bf [4]} Suppose that $w\in C^2(\Omega)\cap C(\overline{\Omega})$ is a solution to the given partial differential equation. Since $\Omega\subseteq\mathbb{R}^3$ is bounded,  $\overline{\Omega}$ is both closed and bounded in $\mathbb{R}^3$, hence $\overline{\Omega}$ is compact. $w$ is continuous on a compact set, thus $w$ attains a maximum and a minimun on $\overline{\Omega}$.
+\noindent Since $w,s,t\in U\subseteq\Omega$ and $\Omega=(1-\epsilon,1+\epsilon)$ for an arbitrary $\epsilon>0$, we can make each of $x,y,z$ as near to 1 as we like. It follows that 
+\[
+f(xy)+g(xz)=0
+\]
+and
+\[
+g(xy)+f(yz)=0
+\]
+\noindent has a solution near $x=y=z=1$
+\hfill $\Box$
+
+\newpage
+
+\noindent {\bf [4]} Let {\bf c} be a constant vector in $\mathbb{R}^3$ and $\Omega\subseteq\mathbb{R}^3$ be a bounded open set. Consider the partial differential equation, where $w:\Omega\rightarrow\mathbb{R}$ is the unknown,
+\[
+-\nabla ^2w+c\cdot\nabla w+w=0,
+\]
+\[
+w|_{\partial\Omega}=0.
+\]
+\noindent Suppose a solution exists such that $w\in C^2(\Omega)\cap C(\overline{\Omega})$. Prove, with details, $w=0$ is the only solution.
+
+
+\vspace{.1in}
+\noindent [proof]
+
+Suppose that $w\in C^2(\Omega)\cap C(\overline{\Omega})$ is a solution to the given partial differential equation. Since $\Omega\subseteq\mathbb{R}^3$ is bounded,  $\overline{\Omega}$ is both closed and bounded in $\mathbb{R}^3$, hence $\overline{\Omega}$ is compact. $w$ is continuous on a compact set, thus $w$ attains a maximum and a minimun on $\overline{\Omega}$.
 
 \begin{itemize}
 \item Case 1: Suppose that both the max and min of $w$ on $\overline{\Omega}$ occur on $\partial \Omega$. Then 
@@ -125,7 +171,7 @@ Let $r\in V$ such $-r\in V$ as well. This is possible. By the surjectivity of $f
 \]
 \noindent So $w=0$ on $\overline{\Omega}$.
 
-\item Case 2: Suppose that max $w$ occurs at $x_M\in \Omega$, and min $w$ occurs anywhere in $\overline{\Omega}$. Since $\Omega$ is open, $x_M$ is an interior point of $\Omega$. Since $w\in C^2(\Omega)$, both $Dw(x_M)$ and $D^2w(x_M)$ exist. Moreover, $Dw(x_M)y=0$ and $D^2w(x_M)y^2\leq 0$ for all $y\in \mathbb{R}^3$. This implies that 
+\item Case 2: Suppose that max $w$ occurs at $x_M\in \Omega$. Since $\Omega$ is open, $x_M$ is an interior point of $\Omega$. Since $w\in C^2(\Omega)$, both $Dw(x_M)$ and $D^2w(x_M)$ exist. Moreover, $Dw(x_M)y=0$ and $D^2w(x_M)y^2\leq 0$ for all $y\in \mathbb{R}^3$. This implies that 
 \[
 c\cdot \left(\nabla w\right)_{x_M}=c\cdot \left(\frac{\partial w}{\partial x},\frac{\partial w}{\partial y},\frac{\partial w}{\partial z}\right)_{x_M}=c\cdot \left(0,0,0\right)=0.
 \]
@@ -148,8 +194,11 @@ hence
 \[
 \min\limits_{\overline{\Omega}}\;w \leq \min\limits_{\Omega}\;w \leq \max\limits_{\Omega}\;w \leq \max\limits_{\overline{\Omega}}\;w \leq 0.\hspace{.5in}(1)
 \]
+\noindent Thus, if min $w$ occurs on $\partial\Omega$, then $\min w=\max w=0$ on $\overline{\Omega}$.
 
-\item Case 3: Suppose that min $w$ occurs at $x_m\in \Omega$, and max $w$ occurs anywhere in $\overline{\Omega}$. We can follow that same arguement in Case 1, but with
+\vspace{.1in}
+
+Suppose that min $w$ occurs at $x_m\in \Omega$. We can follow that same arguement in Case 1, but with
 \begin{align*}
 0&\leq D^2w(x_m)e_1^2=D_{11}w(x_m) \\ 0&\leq D^2w(x_m)e_2^2=D_{22}w(x_m) \\ 0&\leq D^2w(x_m)e_3^2=D_{33}w(x_m)
 \end{align*}
@@ -163,20 +212,20 @@ Thus,
 \max\limits_{\overline{\Omega}}\;w\geq \max\limits_\Omega\;w\geq \min\limits_\Omega\;w\geq\min\limits_{\overline{\Omega}}\geq 0.\hspace{.5in}(2)
 \]
 
-\vspace{.2in} (1) and (2) together imply that $\max\;w=0$ and $\min\;w=0$ on $\overline{\Omega}$. Thus, $w=0$ on $\overline{\Omega}$.  Since $w$ was an arbitrary solution, $w=0$ is the only solution.\hfill $\Box$
+\vspace{.2in} (1) and (2) along with $w|_{\partial\Omega}=0$ imply that $\max\;w=0$ and $\min\;w=0$ on $\overline{\Omega}$. Thus, $w=0$ on $\overline{\Omega}$.  Since $w$ was an arbitrary solution, $w=0$ is the only solution.\hfill $\Box$
 
 
 \end{itemize}
 
-\vspace{.5in}
+\newpage
 
 \noindent {\bf [5]} Let $\Omega=[0,1]\times[0,1]$. Suppose $f:\Omega\rightarrow\mathbb{R}$ is given by $f(x,y)=xy$.
 
-\vspace{.2in}
+\vspace{.1in}
 
 \noindent (a) Use the definition of the Darboux integral to show that $f$ is Darboux integrable, and find the integral.
 
-\vspace{.2in}
+\vspace{.1in}
 
 \noindent Let $\epsilon>0$ and choose $N\in\mathbb{N}$ such that $\frac{2}{N}<\epsilon$. Let $P_\epsilon$ be a partition such that 
 \[
@@ -186,16 +235,12 @@ P_1=\left\{x_0,x_1,...,x_N\right\}=\left\{0,\frac{1}{N},\frac{2}{N},...,\frac{N}
 P_2=\left\{y_0,y_1,...,y_N\right\}=\left\{0,\frac{1}{N},\frac{2}{N},...,\frac{N}{N}=1\right\}.
 \]
 \noindent Note that on each square $R_{ij}=[x_{i-1},x_i]\times[y_{j-1},y_j]$, $1\leq i\leq N$, $1\leq j\leq N$:
+\[
+\begin{array}{c c c} \sup\limits_{R_{ij}}f(x,y)=x_iy_j,	& \text{and}	&	\inf\limits_{R_{ij}}f(x,y)=x_{i-1}y_{j-1}.
+\end{array}
+\]
+
 \vspace{.1in}
-
-\[
-\sup\limits_{R_{ij}}f(x,y)=x_iy_j
-\]
-\[
-\inf\limits_{R_{ij}}f(x,y)=x_{i-1}y_{j-1}.
-\]
-
-\vspace{.2in}
 
 \noindent It follows that
 \begin{align*}
@@ -203,23 +248,19 @@ U(f,P_\epsilon)-L(f,P\epsilon)&=\sum\limits_{i,j=1}^N\left[\sup\limits_{R_{ij}}f
 \end{align*}
 \noindent Thus $f$ is darboux integrable on $\Omega$.\hfill $\Box$
 
-\vspace{.2in}
+\vspace{.1in}
  
 \noindent Let $P_n$, $n\in\mathbb{N}$, be a partition of $\Omega$ consisting of squares of side length $\frac{1}{n}$. Then
 \begin{align*}
-U(f,P_n)&=\sum\limits_{i,j=1}^n\left[\sup\limits_{R_{ij}}f(x,y)\right]\left(x_i-x_{i-1}\right)\left(y_j-y_{j-1}\right)\\&=\sum\limits_{i,j=1}^n\left[\frac{i}{n}\frac{j}{n}\right]\frac{1}{n}\frac{1}{n}\\&=\frac{1}{n^4}\left[\sum\limits_{i=1}^ni\left[\sum\limits_{j=1}^nj\right]\right]\\&=\\&=\frac{1}{n^4}\left[\frac{n(n+1)}{2}\right]\sum\limits_{i=1}^ni\\&=\left[\frac{(n+1)}{2n^3}\right]\left[\frac{n(n+1)}{2}\right]\\&=\frac{(n+1)^2}{4n^2}\\&=\frac{n^2+2n+1}{4n^2}\\&>\frac{1}{4}&&\text{for all n.}
+U(f,P_n)&=\sum\limits_{i,j=1}^n\left[\sup\limits_{R_{ij}}f(x,y)\right]\left(x_i-x_{i-1}\right)\left(y_j-y_{j-1}\right)\\&=\sum\limits_{i,j=1}^n\left[\frac{i}{n}\frac{j}{n}\right]\frac{1}{n}\frac{1}{n}\\&=\frac{1}{n^4}\left[\sum\limits_{i=1}^ni\left[\sum\limits_{j=1}^nj\right]\right]\\&=\frac{1}{n^4}\left[\frac{n(n+1)}{2}\right]\sum\limits_{i=1}^ni\\&=\left[\frac{(n+1)}{2n^3}\right]\left[\frac{n(n+1)}{2}\right]\\&=\frac{(n+1)^2}{4n^2}\\&=\frac{n^2+2n+1}{4n^2}\\&>\frac{1}{4},&&\text{for all n. Thus, } \inf\limits_PU(f,P)\geq \frac{1}{4}.
 \end{align*}
-\noindent Thus, $\inf\limits_PU(f,P)\geq \frac{1}{4}$.
-
-\vspace{.2in}
 
 \noindent Similarly,
 
 \begin{align*}
-L(f,P_n)&=\sum\limits_{i,j=1}^n\left[\inf\limits_{R_{ij}}f(x,y)\right]\left(x_i-x_{i-1}\right)\left(y_j-y_{j-1}\right)\\&=\sum\limits_{i,j=1}^n\left[\frac{i-1}{n}\frac{j-1}{n}\right]\frac{1}{n}\frac{1}{n}\\&=\frac{1}{n^4}\left[\sum\limits_{i=1}^n(i-1)\left[\sum\limits_{j=1}^n(j-1)\right]\right]\\&=\\&=\frac{1}{n^4}\left[\frac{n(n+1)}{2}-n\right]\sum\limits_{i=1}^n(i-1)\\&=\frac{1}{n^3}\left[\frac{(n+1)}{2}-1\right]\left[\frac{n(n+1)}{2}-n\right]\\&=\frac{1}{n^2}\frac{n-1}{2}\frac{n-1}{2}\\&=\frac{n^2-2n+1}{4n^2}\\&<\frac{1}{4}&&\text{for all n.}
+L(f,P_n)&=\sum\limits_{i,j=1}^n\left[\inf\limits_{R_{ij}}f(x,y)\right]\left(x_i-x_{i-1}\right)\left(y_j-y_{j-1}\right)\\&=\sum\limits_{i,j=1}^n\left[\frac{i-1}{n}\frac{j-1}{n}\right]\frac{1}{n}\frac{1}{n}\\&=\frac{1}{n^4}\left[\sum\limits_{i=1}^n(i-1)\left[\sum\limits_{j=1}^n(j-1)\right]\right]\\&=\frac{1}{n^4}\left[\frac{n(n+1)}{2}-n\right]\sum\limits_{i=1}^n(i-1)\\&=\frac{1}{n^3}\left[\frac{(n+1)}{2}-1\right]\left[\frac{n(n+1)}{2}-n\right]\\&=\frac{1}{n^2}\frac{n-1}{2}\frac{n-1}{2}\\&=\frac{n^2-2n+1}{4n^2}\\&<\frac{1}{4}&&\text{for all n. Thus, }\sup\limits_PL(f,P)\leq\frac{1}{4}.
 \end{align*}
-\noindent Thus, $\sup\limits_PL(f,P)\leq\frac{1}{4}$.
-\vspace{.2in}
+\vspace{.1in}
 
 \noindent But, since $f$ is darboux integrable on $\Omega$, it must be that
 \[
@@ -231,7 +272,7 @@ L(f,P_n)&=\sum\limits_{i,j=1}^n\left[\inf\limits_{R_{ij}}f(x,y)\right]\left(x_i-
 
 \noindent (b) Repeat (a) using theorems.
 
-\vspace{.2in}
+\vspace{.1in}
 
 \noindent Since the projection functions $p_x(x,y)=x$ and $p_y(x,y)=y$ are both continuous, by the algebra of continuous functions, their product $f(x,y)=xy$ is continuous. Thus, $f(x,y)$ is darboux integrable on $\Omega$. Let $x^{'}\in [0,1]$. Clearly $\int\limits_0^1f(x^{'},y)\;dy=\int\limits_0^1x^{'}y\;dy$ exists. Hence, by the Jones iterated integrals theorem, 
 \[
